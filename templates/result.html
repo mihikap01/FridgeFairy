@@ -1,0 +1,40 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Receipt Result</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+   <div class="container">
+       <div class="header">
+       <h1>FRIDGE FAIRY</h1>
+       <img src="{{ url_for('static', filename='images/logo.png') }}" alt="FridgeFairy Logo">
+   </div>
+       <h2>Receipt Text</h2>
+       <p>{{ text }}</p>
+       <h2>Food Items</h2>
+       <ul>
+           {% for item in food_items %}
+               <li>{{ item }}</li>
+           {% endfor %}
+       </ul>
+       <form method="post" action="{{ url_for('add_item') }}">
+           <input type="hidden" name="text" value="{{ text }}">
+           {% for item in food_items %}
+               <input type="hidden" name="food_items" value="{{ item }}">
+           {% endfor %}
+           <input type="text" name="new_item" placeholder="Add missing food item">
+           <input type="submit" value="Add">
+       </form>
+       <a href="{{ url_for('recipes', food_items=food_items) }}">Find Recipes</a>
+       <a href="{{ url_for('upload_file') }}">Upload Another Receipt</a>
+   </div>
+   <div class="navbar">
+       <a href="{{ url_for('upload_file') }}">Upload</a>
+       <a href="{{ url_for('inventory') }}">Inventory</a>
+       <a href="{{ url_for('recipes') }}">Recipes</a>
+   </div>
+</body>
+</html>

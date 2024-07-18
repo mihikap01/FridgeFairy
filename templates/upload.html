@@ -1,0 +1,27 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Upload Receipt</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+   <div class="container">
+       <div class="header">
+       <h1>FRIDGE FAIRY</h1>
+       <img src="{{ url_for('static', filename='images/logo.png') }}" alt="FridgeFairy Logo">
+   </div>
+       <h2>Upload a Receipt</h2>
+       <form method="post" enctype="multipart/form-data">
+           <input type="file" name="file">
+           <input type="submit" value="Upload">
+       </form>
+   </div>
+   <div class="navbar">
+       <a href="{{ url_for('upload_file') }}">Upload</a>
+       <a href="{{ url_for('inventory') }}">Inventory</a>
+       <a href="{{ url_for('recipes') }}">Recipes</a>
+   </div>
+</body>
+</html>

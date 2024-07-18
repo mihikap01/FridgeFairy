@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Spaghetti Bolognese",
+        "ingredients": ["spaghetti", "ground beef", "tomato sauce", "onion", "garlic", "olive oil", "salt", "pepper"],
+        "instructions": "Cook spaghetti. In a separate pan, cook ground beef with chopped onion and garlic. Add tomato sauce, salt, and pepper. Serve over spaghetti."
+    },
+    {
+        "title": "Chicken Salad",
+        "ingredients": ["chicken breast", "lettuce", "tomato", "cucumber", "olive oil", "salt", "pepper"],
+        "instructions": "Cook chicken breast and slice it. Mix with chopped lettuce, tomato, and cucumber. Add olive oil, salt, and pepper to taste."
+    },
+    {
+        "title": "Veggie Stir Fry",
+        "ingredients": ["broccoli", "carrot", "bell pepper", "soy sauce", "garlic", "ginger", "olive oil"],
+        "instructions": "Stir fry chopped vegetables with garlic and ginger in olive oil. Add soy sauce and cook until vegetables are tender."
+    }
+]

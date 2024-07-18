@@ -1,0 +1,35 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Recipes</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+   <div class="container">
+       <div class="header">
+       <h1>FRIDGE FAIRY</h1>
+       <img src="{{ url_for('static', filename='images/logo.png') }}" alt="FridgeFairy Logo">
+   </div>
+       <h2>Recipes</h2>
+       {% if recipes %}
+           {% for recipe in recipes %}
+               <div class="recipe">
+                   <h2>{{ recipe.title }}</h2>
+                   <p><strong>Ingredients:</strong> {{ recipe.ingredients | join(', ') }}</p>
+                   <p><strong>Instructions:</strong> {{ recipe.instructions }}</p>
+               </div>
+           {% endfor %}
+       {% else %}
+           <p>No recipes found with your current inventory.</p>
+       {% endif %}
+       <a href="{{ url_for('upload_file') }}">Upload Another Receipt</a>
+   </div>
+   <div class="navbar">
+       <a href="{{ url_for('upload_file') }}">Upload</a>
+       <a href="{{ url_for('inventory') }}">Inventory</a>
+       <a href="{{ url_for('recipes') }}">Recipes</a>
+   </div>
+</body>
+</html>
